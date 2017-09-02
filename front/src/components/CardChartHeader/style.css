@@ -1,0 +1,5 @@
+.ui.container.CardChartHeader-wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 16px;
+}

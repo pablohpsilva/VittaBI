@@ -1,0 +1,8 @@
+.ui.card.card-wrapper {
+  min-width: 320px
+}
+
+.card-graph-wrapper {
+  display: flex;
+  justify-content: center;
+}
