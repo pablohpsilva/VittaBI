@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './style.css';
 import 'semantic-ui-css/semantic.min.css';
 
-import fetchData from './request'
+import fetchData from '../../utils/request'
 
 import Chart from '../../components/CardChart'
 import Navbar from '../../components/Navbar'
