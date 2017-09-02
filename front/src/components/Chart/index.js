@@ -8,15 +8,15 @@ import {
   Legend,
   Line,
   LineChart,
-  Pie,
-  PieChart,
-  Radar,
-  RadarChart,
-  RadialBar,
-  RadialBarChart,
+  // Pie,
+  // PieChart,
+  // Radar,
+  // RadarChart,
+  // RadialBar,
+  // RadialBarChart,
   Scatter,
   ScatterChart,
-  Treemap,
+  // Treemap,
   Tooltip,
   XAxis,
   YAxis,
@@ -25,85 +25,75 @@ import {
 export default class Chart extends Component {
   constructor(props) {
     super(props)
-    this.setComponent = this.setComponent.bind(this)
+    this.getChartComponent = this.getChartComponent.bind(this)
+    this.getChartUtilComponent = this.getChartUtilComponent.bind(this)
 
     this.state = {
-      chart: null,
-      chartUtil: null,
       type: this.props.type,
       loopEvent: null,
     }
   }
 
   componentDidMount() {
-    this.setComponent(this.props.type)
   }
 
   capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
   }
 
-  setComponent(type) {
-    if (!type) {
-      this.setState({ type: 'line' })
-      this.setState({ chart: LineChart })
-      this.setState({ chartUtil: Line })
-      return
-    }
-    switch (type.toLowerCase().replace('chart', '')) {
+  getCleanType(type) {
+    return type.trim().toLowerCase().replace('chart', '')
+  }
+
+  getChartComponent (type) {
+    switch (this.getCleanType(type)) {
       case 'area':
-        this.setState({ type: 'area' })
-        this.setState({ chart: AreaChart })
-        this.setState({ chartUtil: Area })
-        break
+        return AreaChart
       case 'bar':
-        this.setState({ type: 'bar' })
-        this.setState({ chart: BarChart })
-        this.setState({ chartUtil: Bar })
-        break
+        return BarChart
       case 'line':
-        this.setState({ type: 'line' })
-        this.setState({ chart: LineChart })
-        this.setState({ chartUtil: Line })
-        break
-      case 'pie':
-        this.setState({ type: 'pie' })
-        this.setState({ chart: PieChart })
-        this.setState({ chartUtil: Pie })
-        break
-      case 'radar':
-        this.setState({ type: 'radar' })
-        this.setState({ chart: RadarChart })
-        this.setState({ chartUtil: Radar })
-        break
-      case 'radialbar':
-        this.setState({ type: 'radialbar' })
-        this.setState({ chart: RadialBarChart })
-        this.setState({ chartUtil: RadialBar })
-        break
+        return LineChart
+      // case 'pie':
+      //   return PieChart
+      // case 'radar':
+      //   return RadarChart
+      // case 'radialbar':
+        // return RadialBarChart
       case 'scatter':
-        this.setState({ type: 'scatter' })
-        this.setState({ chart: ScatterChart })
-        this.setState({ chartUtil: Scatter })
-        break
-      case 'tree':
-        this.setState({ type: 'tree' })
-        this.setState({ chart: Treemap })
-        break
+        return ScatterChart
+      // case 'tree':
+      //   return Treemap
       default:
-        this.setComponent()
-        return
+        return Line
+    }
+  }
+
+  getChartUtilComponent(type) {
+    switch (this.getCleanType(type)) {
+      case 'area':
+        return Area
+      case 'bar':
+        return Bar
+      case 'line':
+        return Line
+      // case 'pie':
+      //   return Pie
+      // case 'radar':
+      //   return Radar
+      // case 'radialbar':
+      //   return RadialBar
+      case 'scatter':
+        return Scatter
+      case 'tree':
+        return null
+      default:
+        return Line
     }
   }
 
   render() {
-    window.setTimeout(() => {
-      if (this.props.type !== this.state.type) {
-        this.setComponent(this.props.type)
-      }
-    }, 5E2)
-    const AuxChart = this.state.chart
-    const AuxChartUtil = this.state.chartUtil
+    const AuxChart = this.getChartComponent(this.props.type)
+    const AuxChartUtil = this.getChartUtilComponent(this.props.type)
 
     return (
       AuxChart
@@ -123,12 +113,12 @@ export default class Chart extends Component {
           }
           {
             AuxChartUtil
-              ? (<AuxChartUtil type="monotone" dataKey="pv" fill="#8884d8" />)
+              ? (<AuxChartUtil type="monotone" dataKey={this.props.dataKeyX || 'pv'} fill="#8884d8" />)
               : ''
           }
           {
             AuxChartUtil
-              ? (<AuxChartUtil type="monotone" dataKey="uv" fill="#82ca9d" />)
+              ? (<AuxChartUtil type="monotone" dataKey={this.props.dataKeyY || 'uv'} fill="#82ca9d" />)
               : ''
           }
         </AuxChart>)
