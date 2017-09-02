@@ -33,6 +33,16 @@ export default class Application extends Component {
           dataKeyY: '',
           type: 'area',
         },
+        {
+          url: 'http://localhost:3001/mg-top-diseases',
+          className: 'Chart-card-wrapper',
+          name: 'doenca',
+          title: 'Número de casos das top 6 doenças',
+          subtitle: 'Por estado em 2017',
+          dataKeyX: 'número de pessoas',
+          dataKeyY: '',
+          type: 'area',
+        },
       ],
       charts: [],
     }

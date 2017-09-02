@@ -41,7 +41,7 @@ class Content extends Component {
           src={FAMILY_IMG}
         />
         <CardsGroup />
-        <Link to="/application">
+        <Link to="/app">
           <Button
             basic
             className="landing-header-button-enter"
