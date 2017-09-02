@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
-app.use(cors);
+app.use(cors());
 
 app.get('/seek-people-per-state', function (req, res) {
     const data = [
@@ -34,7 +34,19 @@ app.get('/seek-people-per-state', function (req, res) {
         {"state": "Sergipe", "number":"12489"},
         {"state": "Tocantins", "number":"11254"}
     ];
-    res.send(data);
+    res.json(data);
+});
+
+app.get('/mg-top-diseases', function (req, res) {
+    const data = [
+        {"state": "Dengue", "number":"1232"},
+        {"state": "Flu", "number":"32424"},
+        {"state": "Influenza H1N1", "number":"653"},
+        {"state": "HIV", "number":"2500"},
+        {"state": "Diabetes", "number":"3523"},
+        {"state": "Chagas", "number":"534"}
+    ];
+    res.json(data);
 });
 
 app.listen(3000, function () {
