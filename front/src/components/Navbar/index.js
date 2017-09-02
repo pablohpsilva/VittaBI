@@ -1,27 +1,63 @@
 import React, { Component } from 'react'
-import { Button, Icon } from 'semantic-ui-react'
-import logo from './logo.svg';
+import { Button, Image, Segment } from 'semantic-ui-react'
+import {
+  Link,
+} from 'react-router-dom'
 import './style.css';
 
+
+const LOGO_VITTA = require('./img/logo-vitta.png')
+
 export default class Navbar extends Component {
+  constructor(props)  {
+    super(props)
+
+    this.state = {
+      allGraphs: true,
+      regionGraph: false,
+      diasesesGraph: false,
+    }
+  }
   render() {
     return (
       <div className="App-header">
-        <img
-          src={logo}
-          className="App-logo"
-          alt="logo" />
-        <h2>
-          {this.props.title}
-        </h2>
-        <div className="Navbar-wrapper">
-          <Button
-            basic
-            color="teal"
-            icon>
-            <Icon name='world' />
-          </Button>
-        </div>
+        <Image
+          src={LOGO_VITTA}
+          size="tiny"
+          alt="logo"
+        />
+        <Segment inverted>
+          <Link to="/region">
+            <Button
+              active={this.state.regionGraph}
+              basic
+              inverted
+              color='blue'
+            >
+              Região
+            </Button>
+          </Link>
+          <Link to="/diaseses">
+            <Button
+              active={this.state.diasesesGraph}
+              basic
+              inverted
+              color='blue'
+            >
+              Doenças
+            </Button>
+          </Link>
+          <Link to="/all">
+            <Button
+              active={this.state.allGraphs}
+              basic
+              inverted
+              color='blue'
+            >
+              Todos
+            </Button>
+          </Link>
+        </Segment>
       </div>
     )
   }
