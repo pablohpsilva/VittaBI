@@ -37,6 +37,18 @@ app.get('/seek-people-per-state', function (req, res) {
     res.json(data);
 });
 
+app.get('/mg-top-diseases', function (req, res) {
+    const data = [
+        {"state": "Dengue", "number":"1232"},
+        {"state": "Flu", "number":"32424"},
+        {"state": "Influenza H1N1", "number":"653"},
+        {"state": "HIV", "number":"2500"},
+        {"state": "Diabetes", "number":"3523"},
+        {"state": "Chagas", "number":"534"}
+    ];
+    res.json(data);
+});
+
 app.listen(3001, function () {
     console.log('Example app listening on port 3001!');
 });
