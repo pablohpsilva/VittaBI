@@ -1,9 +1,7 @@
 import React from 'react'
 import './style.css'
 import {
-  Button,
   Card,
-  Divider,
   Image,
 } from 'semantic-ui-react'
 

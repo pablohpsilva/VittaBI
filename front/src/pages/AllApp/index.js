@@ -89,10 +89,13 @@ export default class Application extends Component {
     }
   }
 
-  toggleMenuVisibility = () => this.setState({ menuVisibility: !this.state.menuVisibility })
+  toggleMenuVisibility = () => {
+    this.setState({ menuVisibility: !this.state.menuVisibility })
+    return null
+  }
 
   requestCharts = (objs) => {
-    objs.map(({ url, name, title, subtitle, dataKeyX, dataKeyY, type, className }, index) => {
+    return objs.map(({ url, name, title, subtitle, dataKeyX, dataKeyY, type, className }, index) => { // eslint-disable-line
       fetchData(url)
         .then(data => {
           const charts = Object.assign([], this.state.charts)

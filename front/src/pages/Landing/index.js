@@ -3,11 +3,7 @@ import ReactDOM from 'react-dom'
 import scroll from 'scroll'
 import ease from 'ease-component'
 import scrollDoc from 'scroll-doc';
-import {
-  Button,
-  Divider,
-  Image,
-} from 'semantic-ui-react'
+
 import Header from '../../components/LandingHeader'
 import Content from '../../components/LandingContent'
 
