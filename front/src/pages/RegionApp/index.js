@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './style.css';
 import 'semantic-ui-css/semantic.min.css';
 
 import fetchData from '../../utils/request'

@@ -20,13 +20,27 @@ export default class Navbar extends Component {
   }
   render() {
     return (
-      <div className="App-header">
+      <div
+        className="App-header"
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}>
         <Image
           src={LOGO_VITTA}
+          style={{
+            height: 70,
+            width: 60,
+          }}
           size="tiny"
           alt="logo"
         />
-        <Segment inverted>
+        <Segment
+          inverted
+          style={{
+            margin: 0,
+          }}>
           <Link to="/region">
             <Button
               active={this.state.regionGraph}
