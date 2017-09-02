@@ -31,6 +31,7 @@ export default class Navbar extends Component {
           inverted
           style={{
             margin: 0,
+            backgroundColor: 'transparent',
           }}>
           <Link to="/region">
             <Button
