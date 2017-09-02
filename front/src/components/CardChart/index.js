@@ -71,7 +71,8 @@ export default class CardChart extends Component {
       <Wrapper
         className={"card-wrapper App-card " + this.props.className}
         style={{
-          width: this.props.width || 700
+          width: this.props.width || 700,
+          margin: '1em 0',
         }}>
         <Card.Content>
           <div className="card-content-wrapper">
