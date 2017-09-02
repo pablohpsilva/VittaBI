@@ -44,6 +44,16 @@ export default class Application extends Component {
           dataKeyY: '',
           type: 'bar',
         },
+        {
+          url: `${baseURL}/children-protected-against-poliomielite`,
+          className: 'Chart-card-wrapper',
+          name: 'region',
+          title: 'Crianças vacinadas contra poliomielite',
+          subtitle: 'Por regiao',
+          dataKeyX: 'meninos',
+          dataKeyY: 'meninas',
+          type: 'bar',
+        },
       ],
       charts: [],
     }
