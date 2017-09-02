@@ -7,44 +7,74 @@ import fetchData from '../../utils/request'
 import Chart from '../../components/CardChart'
 import Navbar from '../../components/Navbar'
 
-const data = [
-  { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
-  { name: 'Page B', uv: 3000, pv: 1398, amt: 2210 },
-  { name: 'Page C', uv: 2000, pv: 9800, amt: 2290 },
-  { name: 'Page D', uv: 2780, pv: 3908, amt: 2000 },
-  { name: 'Page E', uv: 1890, pv: 4800, amt: 2181 },
-  { name: 'Page F', uv: 2390, pv: 3800, amt: 2500 },
-  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
-]
-
 export default class Application extends Component {
   constructor() {
     super()
     this.state = {
       menuVisibility: false,
-      stateChart: [],
-      mgStateChart: [],
+      chartsRaw: [
+        {
+          url: 'http://localhost:3001/seek-people-per-state',
+          className: 'Chart-card-wrapper',
+          name: 'state',
+          title: 'Pessoas doentes',
+          subtitle: 'Por estado em 2017',
+          dataKeyX: 'número de pessoas',
+          dataKeyY: '',
+          type: 'area',
+        },
+        {
+          url: 'http://localhost:3001/mg-top-diseases',
+          className: 'Chart-card-wrapper',
+          name: 'doenca',
+          title: 'Número de casos das top 6 doenças',
+          subtitle: 'Por estado em 2017',
+          dataKeyX: 'número de pessoas',
+          dataKeyY: '',
+          type: 'area',
+        },
+      ],
+      charts: [],
     }
   }
 
   toggleMenuVisibility = () => this.setState({ menuVisibility: !this.state.menuVisibility })
 
-  componentDidMount() {
-    fetchData('http://localhost:3001/seek-people-per-state')
-      .then(data => {
-        this.setState({ stateChart: data })
-      })
-      .catch(err => {
-        this.setState({ stateChart: [] })
-      })
+  requestCharts = (objs) => {
+    objs.map(({ url, name, title, subtitle, dataKeyX, dataKeyY, type, className }, index) => {
+      fetchData(url)
+        .then(data => {
+          const charts = Object.assign([], this.state.charts)
+          charts.push(this.createChartComponent(index, name, title, subtitle, dataKeyX, dataKeyY, data, type))
+          this.setState({ charts })
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    })
+  }
 
-    fetchData('http://localhost:3001/mg-top-diseases')
-      .then(data => {
-        this.setState({ mgStateChart: data })
-      })
-      .catch(err => {
-        this.setState({ mgStateChart: [] })
-      })
+  componentDidMount() {
+    this.requestCharts(this.state.chartsRaw)
+  }
+
+  createChartComponent = (key, name, title, subtitle, dataKeyX, dataKeyY, data, type, className = 'Chart-card-wrapper') => {
+    if (!data || !data.length) {
+      return null
+    }
+    return (
+      <Chart
+        className={className}
+        key={key}
+        name={name}
+        title={title}
+        subtitle={subtitle}
+        dataKeyX={dataKeyX}
+        dataKeyY={dataKeyY}
+        data={data}
+        type={type}
+      />
+    )
   }
 
   render() {
@@ -54,6 +84,8 @@ export default class Application extends Component {
           onToggle={this.toggleMenuVisibility}
         />
         <div className="App-content">
+          {this.state.charts}
+          {/*
           <Chart
             className="Chart-card-wrapper"
             name="state"
@@ -81,6 +113,8 @@ export default class Application extends Component {
             dataKeyY={'uv'}
             data={data}
           />
+          */
+          }
         </div>
       </div>
     )
