@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './style.css';
 import 'semantic-ui-css/semantic.min.css';
 
+import fetchData from './request'
+
 import Chart from '../../components/CardChart'
 import Navbar from '../../components/Navbar'
 
@@ -28,10 +30,7 @@ export default class Application extends Component {
   toggleMenuVisibility = () => this.setState({ menuVisibility: !this.state.menuVisibility })
 
   componentDidMount() {
-    window.fetch('http://localhost:3001/seek-people-per-state')
-      .then(res => {
-        return res.json()
-      })
+    fetchData('http://localhost:3001/seek-people-per-state')
       .then(data => {
         this.setState({ stateChart: data })
       })
@@ -39,10 +38,7 @@ export default class Application extends Component {
         this.setState({ stateChart: [] })
       })
 
-    window.fetch('http://localhost:3001/mg-top-diseases')
-      .then(res => {
-        return res.json()
-      })
+    fetchData('http://localhost:3001/mg-top-diseases')
       .then(data => {
         this.setState({ mgStateChart: data })
       })
