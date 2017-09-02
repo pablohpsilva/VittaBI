@@ -66,7 +66,7 @@ export default class Application extends Component {
             dataKeyX={'número de pessoas'}
             dataKeyY={''}
             data={this.state.stateChart}
-            type="bar"
+            type="area"
           />
           <Chart
             className="Chart-card-wrapper"
