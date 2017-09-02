@@ -4,9 +4,9 @@
   flex: 1;
 }
 .ui.cards.landing-container-card {
-  width: 50%;
+  display: flex;
+  justify-content: center;
   padding: 40px;
-  justify-content: flex-end;
 }
 .ui.card.landing-card {
   width: 100%;
@@ -16,5 +16,5 @@
 }
 .ui.button.landing-header-button-enter {
   margin-top: 30px;
-  margin-left: calc(50% - 200px);
+  margin-left: calc(50% - 150px);
 }
