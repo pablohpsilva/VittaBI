@@ -40,7 +40,7 @@ class Content extends Component {
         <CardsGroup />
         <Link to="/app">
           <Button
-            basic
+            inverted
             className="landing-header-button-enter"
             size="massive"
             color='blue'

@@ -17,7 +17,7 @@ const Header = (props) => (
     <h1
       className="landing-header-title"
     >
-      Vitta auxiliando o crescimento da informação,<br/>contribuindo para a saúde do Brasil.
+      Auxiliando o crescimento da informação,<br/>contribuindo para a saúde do Brasil.
     </h1>
     <Divider />
     <Button

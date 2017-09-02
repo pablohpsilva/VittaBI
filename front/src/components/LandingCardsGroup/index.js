@@ -9,6 +9,7 @@ const TECH_ICON = require('./img/power-icon.png')
 const COMM_ICON = require('./img/community-icon.png')
 const PREV_ICON = require('./img/heart-icon.png')
 const CARD_WIDTH = { width: "100%" }
+const TITLE_STYLE = { "margin-top": "5px" }
 
 const CardsGroup = () => (
   <div className="landing-container-cards">
@@ -16,7 +17,7 @@ const CardsGroup = () => (
       <Card className="landing-card" style={CARD_WIDTH}>
         <Card.Content>
           <Image floated='left' size='mini' src={TECH_ICON} />
-          <Card.Header>
+          <Card.Header style={TITLE_STYLE}>
             Tecnologia
           </Card.Header>
           <Card.Description>
@@ -27,7 +28,7 @@ const CardsGroup = () => (
       <Card className="landing-card" style={CARD_WIDTH}>
         <Card.Content>
           <Image floated='left' size='mini' src={COMM_ICON} />
-          <Card.Header>
+          <Card.Header style={TITLE_STYLE}>
             Comunidade
           </Card.Header>
           <Card.Description>
@@ -38,7 +39,7 @@ const CardsGroup = () => (
       <Card className="landing-card" style={CARD_WIDTH}>
         <Card.Content>
           <Image floated='left' size='mini' src={PREV_ICON} />
-          <Card.Header>
+          <Card.Header style={TITLE_STYLE}>
             Prevenção
           </Card.Header>
           <Card.Description>
