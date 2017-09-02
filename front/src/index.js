@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import Landing from './pages/Landing'
+import Application from './pages/Application'
 import registerServiceWorker from './registerServiceWorker'
 
 import 'semantic-ui-css/semantic.min.css'
 
-ReactDOM.render(<Landing />, document.getElementById('root'))
+ReactDOM.render(<Application />, document.getElementById('root'))
 registerServiceWorker()

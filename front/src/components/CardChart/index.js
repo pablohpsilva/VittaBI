@@ -95,8 +95,9 @@ export default class CardChart extends Component {
               <Chart
                 type={this.state.type}
                 data={this.props.data}
-                dataKeyX={this.state.xaxis}
-                dataKeyY={this.state.yaxis}
+                name={this.props.name}
+                dataKeyX={this.props.dataKeyX}
+                dataKeyY={this.props.dataKeyY}
                 width={this.getChartWidth()}
               />
             </div>

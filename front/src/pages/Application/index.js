@@ -19,11 +19,34 @@ export default class Application extends Component {
   constructor() {
     super()
     this.state = {
-      menuVisibility: false
+      menuVisibility: false,
+      stateChart: [],
     }
   }
 
   toggleMenuVisibility = () => this.setState({ menuVisibility: !this.state.menuVisibility })
+
+  componentDidMount() {
+    // const myHeaders = new Headers();
+
+    // const myInit = {
+    //   method: 'GET',
+    //   headers: myHeaders,
+    //   mode: 'cors',
+    //   cache: 'default'
+    // };
+    // window.fetch('http://localhost:3001/seek-people-per-state', myInit)
+    window.fetch('http://localhost:3001/seek-people-per-state')
+      .then(res => {
+        return res.json()
+      })
+      .then(data => {
+        this.setState({ stateChart: data })
+      })
+      .catch(err => {
+        this.setState({ stateChart: [] })
+      })
+  }
 
   render() {
     return (
@@ -34,16 +57,27 @@ export default class Application extends Component {
         <div className="App-content">
           <Chart
             className="Chart-card-wrapper"
-            data={data}
-            type="scatter"
+            name="state"
+            title="Pessoas doentes"
+            subtitle="Por estado em 2017"
+            dataKeyX={'número de pessoas'}
+            dataKeyY={''}
+            data={this.state.stateChart}
+            type="bar"
           />
           <Chart
             className="Chart-card-wrapper"
+            name="name"
+            dataKeyX={'pv'}
+            dataKeyY={'uv'}
             data={data}
             type="bar"
           />
           <Chart
             className="Chart-card-wrapper"
+            name="name"
+            dataKeyX={'pv'}
+            dataKeyY={'uv'}
             data={data}
           />
         </div>

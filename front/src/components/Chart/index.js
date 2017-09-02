@@ -102,7 +102,7 @@ export default class Chart extends Component {
           height={this.props.height || 300}
           data={this.props.data}
           margin={this.props.margin || { top: 5, right: 30, left: 20, bottom: 5 }}>
-          <XAxis dataKey="name" />
+          <XAxis dataKey={this.props.name || 'name'} />
           <YAxis />
           <Tooltip />
           <Legend />
@@ -112,13 +112,13 @@ export default class Chart extends Component {
               : ''
           }
           {
-            AuxChartUtil
-              ? (<AuxChartUtil type="monotone" dataKey={this.props.dataKeyX || 'pv'} fill="#8884d8" />)
+            AuxChartUtil && this.props.dataKeyX
+              ? (<AuxChartUtil type="monotone" dataKey={this.props.dataKeyX} fill="#8884d8" />)
               : ''
           }
           {
-            AuxChartUtil
-              ? (<AuxChartUtil type="monotone" dataKey={this.props.dataKeyY || 'uv'} fill="#82ca9d" />)
+            AuxChartUtil && this.props.dataKeyY
+              ? (<AuxChartUtil type="monotone" dataKey={this.props.dataKeyY} fill="#82ca9d" />)
               : ''
           }
         </AuxChart>)
