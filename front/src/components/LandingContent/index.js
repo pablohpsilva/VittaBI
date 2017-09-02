@@ -46,7 +46,7 @@ class Content extends Component {
             color='blue'
           >
             Conheça a plataforma
-          </Button>
+        </Button>
         </Link>
       </div>
     )
