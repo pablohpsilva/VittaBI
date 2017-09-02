@@ -49,6 +49,17 @@ app.get('/mg-top-diseases', function (req, res) {
     res.json(data);
 });
 
+app.get('/dengue-per-region', function (req, res) {
+    const data = [
+        {"region": "Norte", "número de pessoas": 182423},
+        {"region": "Nordeste", "número de pessoas": 224234},
+        {"region": "Centro-Oeste", "número de pessoas": 102653},
+        {"region": "Sudeste", "número de pessoas": 67632},
+        {"region": "Sul", "número de pessoas": 38273},
+    ];
+    res.json(data);
+});
+
 app.listen(3001, function () {
     console.log('Example app listening on port 3001!');
 });
