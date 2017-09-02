@@ -37,7 +37,7 @@ export default class Navbar extends Component {
               Região
             </Button>
           </Link>
-          <Link to="/diaseses">
+          <Link to="/diaseases">
             <Button
               active={this.state.diasesesGraph}
               basic
@@ -47,7 +47,7 @@ export default class Navbar extends Component {
               Doenças
             </Button>
           </Link>
-          <Link to="/all">
+          <Link to="/app">
             <Button
               active={this.state.allGraphs}
               basic
