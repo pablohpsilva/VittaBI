@@ -18,7 +18,7 @@ export default class Application extends Component {
           className: 'Chart-card-wrapper',
           name: 'state',
           title: 'Pessoas doentes',
-          subtitle: 'Por estado em 2017',
+          subtitle: 'Por estado em 2016',
           dataKeyX: 'número de pessoas',
           dataKeyY: '',
           type: 'area',
