@@ -10,11 +10,12 @@ import Navbar from '../../components/Navbar'
 export default class Application extends Component {
   constructor() {
     super()
+    const baseURL = 'http://localhost:3001'
     this.state = {
       menuVisibility: false,
       chartsRaw: [
         {
-          url: 'http://localhost:3001/seek-people-per-state',
+          url: `${baseURL}/seek-people-per-state`,
           className: 'Chart-card-wrapper',
           name: 'state',
           title: 'Pessoas doentes',
@@ -24,7 +25,7 @@ export default class Application extends Component {
           type: 'area',
         },
         {
-          url: 'http://localhost:3001/mg-top-diseases',
+          url: `${baseURL}/mg-top-diseases`,
           className: 'Chart-card-wrapper',
           name: 'doenca',
           title: 'Número de casos das top 6 doenças',
@@ -34,14 +35,14 @@ export default class Application extends Component {
           type: 'area',
         },
         {
-          url: 'http://localhost:3001/mg-top-diseases',
+          url: `${baseURL}/dengue-per-region`,
           className: 'Chart-card-wrapper',
-          name: 'doenca',
-          title: 'Número de casos das top 6 doenças',
-          subtitle: 'Por estado em 2017',
+          name: 'region',
+          title: 'Número de casos de dengue',
+          subtitle: 'Por regiao',
           dataKeyX: 'número de pessoas',
           dataKeyY: '',
-          type: 'area',
+          type: 'bar',
         },
       ],
       charts: [],
