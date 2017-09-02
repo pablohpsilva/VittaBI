@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import './style.css'
 import scroll from 'scroll'
 import ease from 'ease-component'
 import scrollDoc from 'scroll-doc';
@@ -9,8 +8,8 @@ import {
   Divider,
   Image,
 } from 'semantic-ui-react'
-import Header from './Header'
-import Content from './Content'
+import Header from '../../components/LandingHeader'
+import Content from '../../components/LandingContent'
 
 class Landing extends Component {
 

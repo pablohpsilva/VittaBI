@@ -1,17 +1,3 @@
-.landing-header {
-  background-color: #3698f9;
-  min-height: 600px;
-  padding: 50px;
-}
-.landing-header-title {
-  color: #FFF;
-  text-align: center;
-  font-size: 40px;
-}
-.ui.button.landing-header-button {
-  margin-top: 30px;
-  margin-left: calc(50% - 100px);
-}
 .landing-container {
   min-height: 700px;
   flex-direction: row;
