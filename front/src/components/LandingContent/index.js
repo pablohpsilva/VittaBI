@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 import './style.css'
 import CardsGroup from '../LandingCardsGroup'
-import {
-  Link,
-} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import {
   Button,
-  Divider,
   Image,
 } from 'semantic-ui-react'
 

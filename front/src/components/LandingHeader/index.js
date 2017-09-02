@@ -32,7 +32,7 @@ const Header = (props) => (
 )
 
 Header.prototype = {
-  handleScrollPage: React.PropTypes.func,
+  handleScrollPage: React.PropTypes.func, // eslint-disable-line
 }
 
 export default Header
