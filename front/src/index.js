@@ -3,17 +3,20 @@ import ReactDOM from 'react-dom'
 import {
   BrowserRouter as Router,
   Route,
-  Link
 } from 'react-router-dom'
 import './index.css'
 import Landing from './pages/Landing'
+import Application from './pages/Application'
 import registerServiceWorker from './registerServiceWorker'
 
 import 'semantic-ui-css/semantic.min.css'
 
 ReactDOM.render(
   <Router>
-    <Route exact path="/" component={Landing}/>
+    <div>
+      <Route exact path="/" component={Landing}/>
+      <Route path="/application" component={Application}/>
+    </div>
   </Router>
   , document.getElementById('root')
 )

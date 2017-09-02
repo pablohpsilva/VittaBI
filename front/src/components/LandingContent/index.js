@@ -1,6 +1,9 @@
 import React from 'react'
 import './style.css'
-import CardsGroup from './CardsGroup'
+import CardsGroup from '../LandingCardsGroup'
+import {
+  Link,
+} from 'react-router-dom'
 import {
   Button,
   Divider,
@@ -20,15 +23,16 @@ const Content = () => (
       src={FAMILY_IMG}
     />
     <CardsGroup />
-    <Button
-      basic
-      className="landing-header-button-enter"
-      size="massive"
-      color='blue'
-      onCLick={() => alert('hue')}
-    >
-      Conheça a plataforma
-    </Button>
+    <Link to="/application">
+      <Button
+        basic
+        className="landing-header-button-enter"
+        size="massive"
+        color='blue'
+      >
+        Conheça a plataforma
+      </Button>
+    </Link>
   </div>
 )
 
