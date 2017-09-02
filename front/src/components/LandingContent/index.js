@@ -31,7 +31,7 @@ class Content extends Component {
         className="landing-container"
       >
         <Image
-          hidden={this.state.windowWidth < 920}
+          hidden={this.state.windowWidth > 920}
           className="landing-image"
           floated='left'
           size='big'
