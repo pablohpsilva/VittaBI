@@ -4,7 +4,6 @@
   flex: 1;
 }
 .ui.cards.landing-container-card {
-  width: 50%;
   padding: 40px;
   justify-content: flex-end;
 }
