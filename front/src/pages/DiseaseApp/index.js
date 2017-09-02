@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import 'semantic-ui-css/semantic.min.css';
 
 import fetchData from '../../utils/request'
+import createChartComponent from '../../utils/createChartComponent'
 
-import Chart from '../../components/CardChart'
 import Navbar from '../../components/Navbar'
 
 export default class Application extends Component {
@@ -58,7 +58,7 @@ export default class Application extends Component {
       fetchData(url)
         .then(data => {
           const charts = Object.assign([], this.state.charts)
-          charts.push(this.createChartComponent(index, name, title, subtitle, dataKeyX, dataKeyY, data, type))
+          charts.push(createChartComponent(index, name, title, subtitle, dataKeyX, dataKeyY, data, type))
           this.setState({ charts })
         })
         .catch(err => {
@@ -69,25 +69,6 @@ export default class Application extends Component {
 
   componentDidMount() {
     this.requestCharts(this.state.chartsRaw)
-  }
-
-  createChartComponent = (key, name, title, subtitle, dataKeyX, dataKeyY, data, type, className = 'Chart-card-wrapper') => {
-    if (!data || !data.length) {
-      return null
-    }
-    return (
-      <Chart
-        className={className}
-        key={key}
-        name={name}
-        title={title}
-        subtitle={subtitle}
-        dataKeyX={dataKeyX}
-        dataKeyY={dataKeyY}
-        data={data}
-        type={type}
-      />
-    )
   }
 
   render() {
