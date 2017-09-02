@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "office-ui-fabric-react": "^4.39.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-map-gl": "^3.0.4",
-    "recharts": "^1.0.0-alpha.4"
+    "recharts": "^1.0.0-alpha.4",
+    "semantic-ui-react": "^0.72.0"
   },
   "devDependencies": {
     "react-scripts": "1.0.12"
