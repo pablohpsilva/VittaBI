@@ -43,7 +43,7 @@ const CardsGroup = () => (
             Prevenção
           </Card.Header>
           <Card.Description>
-            Cuidar é uma tarefa difícil e que pertence à cada um de nós. Motivar a prevenção contribui para facilitar a forma de cuidar, assim
+            Cuidar é uma tarefa difícil e pertence à cada um de nós. Incentivar a prevenção contribui para que a saúde no Brasil seja mais humana e eficiente.
           </Card.Description>
         </Card.Content>
       </Card>
