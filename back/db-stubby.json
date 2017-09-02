@@ -1,0 +1,153 @@
+{
+  "type": "array",
+  "minItems": 10000,
+  "maxItems": 20000,
+  "items": {
+    "weight": {
+      "type": "integer",
+      "minimum": 20,
+      "maximum": 200
+    },
+    "height": {
+      "type": "integer",
+      "minimum":80,
+      "maximum": 200
+    },
+    "age": {
+      "type": "integer",
+      "minimum": 5,
+      "maximum": 100
+    },
+    "civilState": {
+      "enum": [
+        "SINGLE",
+        "MARRIED",
+        "WIDOWED",
+        "DIVORCED"
+      ]
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "country": "United States",
+        "state": {
+          "type": "string",
+          "faker": "address.state"
+        },
+        "city": {
+          "type": "string",
+          "faker": "address.city"
+        }
+      },
+      "required": [
+        "country",
+        "state",
+        "city"
+      ]
+    },
+    "nationality": {
+      "type": "string",
+      "faker": "address.country"
+    },
+    "diagnostics": {
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 5,
+      "items": {
+        "name": {
+          "enum": [
+            "Alzheimer",
+            "Chagas",
+            "HIV",
+            "Hepatite B",
+            "Hepatite C",
+            "Down Sindrome",
+            "Cancer",
+            "Sifilis"
+          ]
+        },
+        "doctor": {
+          "type": "string",
+          "faker": "name.findName"
+        },
+        "date": {
+          "type": "string",
+          "faker": "date.past"
+        }
+      },
+      "required": [
+        "name",
+        "doctor",
+        "date"
+      ]
+    },
+    "alergies": {
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 4,
+      "items": {
+        "enum": [
+          "Milk",
+          "Dust",
+          "Shrimp",
+          "Dust",
+          "Pets",
+          "Pollen"
+        ]
+      }
+    },
+    "bloodType": {
+      "enum": [
+        "A-",
+        "A+",
+        "B-",
+        "B+",
+        "AB-",
+        "AB+",
+        "O-",
+        "O+"
+      ]
+    },
+    "numberOfChildren": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "incomePerMonth": {
+      "type": "object",
+      "properties": {
+        "currency": "USD",
+        "value": {
+          "type": "string",
+          "faker": "finance.amount"
+        }
+      },
+      "required": [
+        "currency",
+        "value"
+      ]
+    },
+    "scholarity": {
+      "enum": [
+        "NO SCHOLAR",
+        "HIGH SCHOOL",
+        "MASTER",
+        "PHD"
+      ]
+    }
+  },
+  "required": [
+    "weight",
+    "height",
+    "age",
+    "civilState",
+    "address",
+    "nationality",
+    "diagnostics",
+    "alergies",
+    "bloodType",
+    "numberOfChildren",
+    "incomePerMonth",
+    "scholarity"
+  ]
+}
