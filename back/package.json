@@ -11,6 +11,7 @@
   "dependencies": {
     "algoliasearch": "^3.24.3",
     "algoliasearch-helper": "^2.21.2",
+    "cors": "^2.8.4",
     "express": "^4.15.4"
   }
 }
