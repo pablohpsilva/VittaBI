@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './style.css';
 import 'semantic-ui-css/semantic.min.css';
 
-import Chart from '../CardChart'
-import Navbar from '../Navbar'
+import Chart from '../../components/CardChart'
+import Navbar from '../../components/Navbar'
 
 const data = [
   { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
