@@ -93,6 +93,7 @@ export default class Application extends Component {
       <div className="App">
         <Navbar
           onToggle={this.toggleMenuVisibility}
+          diasesesGraph
         />
         <div className="App-content">
           {this.state.charts}

@@ -9,15 +9,6 @@ import './style.css';
 const LOGO_VITTA = require('./img/logo-vitta.png')
 
 export default class Navbar extends Component {
-  constructor(props)  {
-    super(props)
-
-    this.state = {
-      allGraphs: true,
-      regionGraph: false,
-      diasesesGraph: false,
-    }
-  }
   render() {
     return (
       <div className="App-header">
@@ -29,7 +20,7 @@ export default class Navbar extends Component {
         <Segment inverted>
           <Link to="/region">
             <Button
-              active={this.state.regionGraph}
+              active={this.props.regionGraph}
               basic
               inverted
               color='blue'
@@ -39,7 +30,7 @@ export default class Navbar extends Component {
           </Link>
           <Link to="/diaseases">
             <Button
-              active={this.state.diasesesGraph}
+              active={this.props.diasesesGraph}
               basic
               inverted
               color='blue'
@@ -49,7 +40,7 @@ export default class Navbar extends Component {
           </Link>
           <Link to="/app">
             <Button
-              active={this.state.allGraphs}
+              active={this.props.allGraphs}
               basic
               inverted
               color='blue'
@@ -61,4 +52,10 @@ export default class Navbar extends Component {
       </div>
     )
   }
+}
+
+Navbar.defaultProps = {
+  allGraphs: false,
+  diasesesGraph: false,
+  regionGraph: false,
 }
