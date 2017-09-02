@@ -21,21 +21,13 @@ export default class Application extends Component {
     this.state = {
       menuVisibility: false,
       stateChart: [],
+      mgStateChart: [],
     }
   }
 
   toggleMenuVisibility = () => this.setState({ menuVisibility: !this.state.menuVisibility })
 
   componentDidMount() {
-    // const myHeaders = new Headers();
-
-    // const myInit = {
-    //   method: 'GET',
-    //   headers: myHeaders,
-    //   mode: 'cors',
-    //   cache: 'default'
-    // };
-    // window.fetch('http://localhost:3001/seek-people-per-state', myInit)
     window.fetch('http://localhost:3001/seek-people-per-state')
       .then(res => {
         return res.json()
@@ -45,6 +37,17 @@ export default class Application extends Component {
       })
       .catch(err => {
         this.setState({ stateChart: [] })
+      })
+
+    window.fetch('http://localhost:3001/mg-top-diseases')
+      .then(res => {
+        return res.json()
+      })
+      .then(data => {
+        this.setState({ mgStateChart: data })
+      })
+      .catch(err => {
+        this.setState({ mgStateChart: [] })
       })
   }
 
@@ -67,10 +70,12 @@ export default class Application extends Component {
           />
           <Chart
             className="Chart-card-wrapper"
-            name="name"
-            dataKeyX={'pv'}
-            dataKeyY={'uv'}
-            data={data}
+            name="doenca"
+            title="Minas Gerais"
+            subtitle="Número de casos das top 6 doenças"
+            dataKeyX={'número de pessoas'}
+            dataKeyY={''}
+            data={this.state.mgStateChart}
             type="bar"
           />
           <Chart

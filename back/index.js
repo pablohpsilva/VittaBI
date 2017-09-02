@@ -39,12 +39,12 @@ app.get('/seek-people-per-state', function (req, res) {
 
 app.get('/mg-top-diseases', function (req, res) {
     const data = [
-        {"state": "Dengue", "number":"1232"},
-        {"state": "Flu", "number":"32424"},
-        {"state": "Influenza H1N1", "number":"653"},
-        {"state": "HIV", "number":"2500"},
-        {"state": "Diabetes", "number":"3523"},
-        {"state": "Chagas", "number":"534"}
+        {"doenca": "Dengue", "número de pessoas": 1232},
+        {"doenca": "Flu", "número de pessoas": 32424},
+        {"doenca": "Influenza H1N1", "número de pessoas": 653},
+        {"doenca": "HIV", "número de pessoas": 2500},
+        {"doenca": "Diabetes", "número de pessoas": 3523},
+        {"doenca": "Chagas", "número de pessoas": 534},
     ];
     res.json(data);
 });
