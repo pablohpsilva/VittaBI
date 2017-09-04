@@ -119,8 +119,10 @@ const getData = (baseURL) => {
 }
 
 export const mockRequest = (url, payload, options = {}) => {
-  const baseURL = url.replace('http://localhost:3001/')
+  const baseURL = url.replace('http://localhost:3001/', '')
   return new Promise((resolve, reject) => {
-    return resolve(getData(baseURL))
+    const data = getData(baseURL)
+    debugger
+    resolve(data)
   })
 }
