@@ -10,7 +10,7 @@ export default (url, payload, options = {}) => {
 
 export const mockRequest = (url, payload, options = {}) => {
   const baseURL = url.replace('http://localhost:8080/')
-  if (baseUrl === 'seek-people-per-state') {
+  if (baseURL === 'seek-people-per-state') {
     return [
       { "state": "Acre", "número de pessoas": 12423 },
       { "state": "Alagoas", "número de pessoas": 24234 },
@@ -41,7 +41,7 @@ export const mockRequest = (url, payload, options = {}) => {
       { "state": "Tocantins", "número de pessoas": 11254 },
     ]
   }
-  if (baseUrl === 'dengue-per-region') {
+  if (baseURL === 'dengue-per-region') {
     return [
       { "region": "Norte", "número de pessoas": 182423 },
       { "region": "Nordeste", "número de pessoas": 224234 },
@@ -50,7 +50,7 @@ export const mockRequest = (url, payload, options = {}) => {
       { "region": "Sul", "número de pessoas": 38273 },
     ]
   }
-  if (baseUrl === 'mg-top-diseases') {
+  if (baseURL === 'mg-top-diseases') {
     return [
       { "doenca": "Dengue", "número de pessoas": 1232 },
       { "doenca": "Flu", "número de pessoas": 32424 },
@@ -60,7 +60,7 @@ export const mockRequest = (url, payload, options = {}) => {
       { "doenca": "Chagas", "número de pessoas": 534 },
     ]
   }
-  if (baseUrl === 'flu-per-month') {
+  if (baseURL === 'flu-per-month') {
     return [
       { "mês": "Janeiro", "pessoas infectadas": 1129319 },
       { "mês": "Fevereiro", "pessoas infectadas": 1122938 },
@@ -76,7 +76,7 @@ export const mockRequest = (url, payload, options = {}) => {
       { "mês": "Dezembro", "pessoas infectadas": 1123892 },
     ]
   }
-  if (baseUrl === 'children-protected-against-poliomielite') {
+  if (baseURL === 'children-protected-against-poliomielite') {
     return [
       { "region": "Norte", "meninos": 16423, "meninas": 12938 },
       { "region": "Nordeste", "meninos": 14234, "meninas": 15203 },
@@ -85,7 +85,7 @@ export const mockRequest = (url, payload, options = {}) => {
       { "region": "Sul", "meninos": 20203, "meninas": 19283 },
     ]
   }
-  if (baseUrl === 'people-protected-against-flu') {
+  if (baseURL === 'people-protected-against-flu') {
     return [
       { "state": "Acre", "número de pessoas": 1223 },
       { "state": "Alagoas", "número de pessoas": 2424 },
