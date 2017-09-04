@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Route,
 } from 'react-router-dom'
 import './index.css'
@@ -14,14 +14,14 @@ import registerServiceWorker from './registerServiceWorker'
 import 'semantic-ui-css/semantic.min.css'
 
 ReactDOM.render(
-  <Router>
+  <HashRouter>
     <div>
       <Route exact path="/" component={Landing}/>
       <Route path="/app" component={AllApp}/>
       <Route path="/region" component={RegionApp}/>
       <Route path="/diaseases" component={DiseaseApp}/>
     </div>
-  </Router>
+  </HashRouter>
   , document.getElementById('root')
 )
 registerServiceWorker()

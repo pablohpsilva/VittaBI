@@ -2,8 +2,10 @@
   "name": "front",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://pablohpsilva.github.io/VittaBI",
   "dependencies": {
     "ease-component": "^1.0.0",
+    "gh-pages": "^1.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-map-gl": "^3.0.4",
@@ -20,6 +22,8 @@
     "react-scripts": "1.0.12"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
