@@ -8,6 +8,8 @@
 
 * Name: VittaBI
 * App URL: [pablohpsilva.github.io/VittaBI](https://pablohpsilva.github.io/VittaBI)
+* Backend tools and technology: NodeJS and ExpressJS
+* Frontend tools and technology: ReactJS ecosystem and Recharts
 * Description:
 
 This application idea is trying to use BI on [Vitta](https://vitta.me) database and gather informations to answer questions like:
@@ -17,9 +19,6 @@ This application idea is trying to use BI on [Vitta](https://vitta.me) database 
 3. Given this time of the year, how many flu (or any diseases) cases were registered?
 
 With information like this, this application could save lives, make pharmaceutical industry sell more medicines and help people get prevented from diseases; This could me used as a government tool too. 
-
-* Backend tools and technology: NodeJS and ExpressJS
-* Frontend tools and technology: ReactJS ecosystem and Recharts
 
 ### Developers info
 * Backend developer: @nielsenmg
