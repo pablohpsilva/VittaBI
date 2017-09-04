@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import 'semantic-ui-css/semantic.min.css';
 
-import fetchData from '../../utils/request'
+import { mockRequest } from '../../utils/request'
 import createChartComponent from '../../utils/createChartComponent'
 
 import Navbar from '../../components/Navbar'
@@ -55,7 +55,7 @@ export default class Application extends Component {
 
   requestCharts = (objs) => {
     return objs.map(({ url, name, title, subtitle, dataKeyX, dataKeyY, type, className }, index) => { // eslint-disable-line
-      fetchData(url)
+      mockRequest(url)
         .then(data => {
           const charts = Object.assign([], this.state.charts)
           charts.push(createChartComponent(index, name, title, subtitle, dataKeyX, dataKeyY, data, type))
