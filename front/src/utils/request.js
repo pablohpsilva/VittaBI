@@ -9,7 +9,7 @@ export default (url, payload, options = {}) => {
 }
 
 export const mockRequest = (url, payload, options = {}) => {
-  const baseURL = url.replace('http://localhost:8080/')
+  const baseURL = url.replace('http://localhost:3001/')
   if (baseURL === 'seek-people-per-state') {
     return [
       { "state": "Acre", "número de pessoas": 12423 },
